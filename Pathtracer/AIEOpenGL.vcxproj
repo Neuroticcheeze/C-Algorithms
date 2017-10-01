@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ImGuizmo.cpp" />
+    <ClCompile Include="snow_drop_visualiser.cpp" />
+    <ClCompile Include="src\BaseApplication.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\deps\gl_core_4_4.c" />
+    <ClCompile Include="src\deps\imgui.cpp" />
+    <ClCompile Include="src\deps\imgui_draw.cpp" />
+    <ClCompile Include="src\deps\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="src\Gizmos.cpp" />
+    <ClCompile Include="src\TestApplication.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImGuizmo.hpp" />
+    <ClInclude Include="snow_drop_visualiser.hpp" />
+    <ClInclude Include="src\BaseApplication.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\deps\gl_core_4_4.h" />
+    <ClInclude Include="src\deps\imconfig.h" />
+    <ClInclude Include="src\deps\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="src\deps\stb_rect_pack.h" />
+    <ClInclude Include="src\deps\stb_textedit.h" />
+    <ClInclude Include="src\deps\stb_truetype.h" />
+    <ClInclude Include="src\deps\tiny_obj_loader.h" />
+    <ClInclude Include="src\Gizmos.h" />
+    <ClInclude Include="src\TestApplication.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{63494F4E-79FA-48AD-AA6C-BDF1FF1619FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AIEOpenGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <ProjectName>SnowDropVisualiser</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files (x86)\AMD APP SDK\3.0\include;$(SolutionDir)dep/physx/inc;$(SolutionDir)dep/glm;$(SolutionDir)dep/glfw-3.1.2/include;$(SolutionDir)dep/stb-master;$(SolutionDir)dep/imgui;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\AMD APP SDK\3.0\lib\x86;$(SolutionDir)dep/physx/lib;$(SolutionDir)dep/glfw-3.1.2/src/$(Configuration);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <ExecutablePath>$(SolutionDir)dep/physx/dll;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files (x86)\AMD APP SDK\3.0\include;$(SolutionDir)dep/physx/inc;$(SolutionDir)dep/glm;$(SolutionDir)dep/glfw-3.1.2/include;$(SolutionDir)dep/stb-master;$(SolutionDir)dep/imgui;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\AMD APP SDK\3.0\lib\x86;$(SolutionDir)dep/physx/lib;$(SolutionDir)dep/glfw-3.1.2/src/$(Configuration);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>SDV_EXPORT;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenCL.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LowLevelClothDEBUG.lib;LowLevelDEBUG.lib;PhysX3CharacterKinematicDEBUG_x86.lib;PhysX3CommonDEBUG_x86.lib;PhysX3CookingDEBUG_x86.lib;PhysX3DEBUG_x86.lib;PhysX3ExtensionsDEBUG.lib;PhysX3VehicleDEBUG.lib;PhysXProfileSDKDEBUG.lib;PhysXVisualDebuggerSDKDEBUG.lib;PvdRuntimeDEBUG.lib;PxTaskDEBUG.lib;SceneQueryDEBUG.lib;SimulationControllerDEBUG.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>SDV_EXPORT;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenCL.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LowLevelCloth.lib;LowLevel.lib;PhysX3CharacterKinematic_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3_x86.lib;PhysX3Extensions.lib;PhysX3Vehicle.lib;PhysXProfileSDK.lib;PhysXVisualDebuggerSDK.lib;PvdRuntime.lib;PxTask.lib;SceneQuery.lib;SimulationController.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

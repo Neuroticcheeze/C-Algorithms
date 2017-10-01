@@ -1,0 +1,44 @@
+kernel void insert_triangles(
+		global const float *triangle_buffer,
+		global uint 	   *triangle_subdiv_index_buffer,
+		const uint 			triangle_count,
+		const uint 	subdiv_width,
+		const uint 	subdiv_height,
+		const uint 	subdiv_depth,
+		global const float *encompassing_aabb
+		)
+{
+#define TRIANGLE_STRIDE 45
+#define POS_0 0
+#define POS_1 15
+#define POS_2 30
+
+	size_t index = get_global_id(0);
+
+	if (index < triangle_count)
+	{
+		global const float *tri = &triangle_buffer[index * TRIANGLE_STRIDE];
+		
+		float3 pos0 = (float3)(tri[POS_0 + 0], tri[POS_0 + 1], tri[POS_0 + 2]);
+		float3 pos1 = (float3)(tri[POS_1 + 0], tri[POS_1 + 1], tri[POS_1 + 2]);
+		float3 pos2 = (float3)(tri[POS_2 + 0], tri[POS_2 + 1], tri[POS_2 + 2]);
+		float3 centroid = (pos0 + pos1 + pos2) / 3.0F;
+		
+		float3 encomp_min = (float3)(encompassing_aabb[0], encompassing_aabb[1], encompassing_aabb[2]);
+		float3 encomp_max = (float3)(encompassing_aabb[3], encompassing_aabb[4], encompassing_aabb[5]);
+		float3 encomp_dim = encomp_max - encomp_min;
+		
+		float3 centroid_local = centroid - encomp_min;
+		float3 centroid_mapdTo01 = centroid_local / encomp_dim;
+		
+		int sx = floor(centroid_mapdTo01.x * subdiv_width);
+		int sy = floor(centroid_mapdTo01.y * subdiv_height);
+		int sz = floor(centroid_mapdTo01.z * subdiv_depth);
+		
+		int si = 	sx + 
+					sy * subdiv_width + 
+					sz * subdiv_width * subdiv_height;
+		
+		triangle_subdiv_index_buffer[index] = (uint)(si);
+	}
+}
