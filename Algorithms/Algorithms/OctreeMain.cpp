@@ -6,9 +6,9 @@
 #include <imgui.h>
 #include <vector>
 
-#define ENTITY_COUNT 12
-#define SUBDIV_LIMIT 8
-#define CLUTTER_LIMIT 4
+#define ENTITY_COUNT 200
+#define SUBDIV_LIMIT 3
+#define CLUTTER_LIMIT 8
 #define SHRINK_WRAP
 #define USE_SPACIAL_PARTITIONING
 

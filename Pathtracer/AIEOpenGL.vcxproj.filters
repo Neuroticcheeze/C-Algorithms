@@ -41,6 +41,12 @@
     <ClCompile Include="ImGuizmo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="open_cl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Gizmos.h">
@@ -66,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="ImGuizmo.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="open_cl.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

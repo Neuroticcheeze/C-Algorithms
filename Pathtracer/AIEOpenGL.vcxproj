@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImGuizmo.cpp" />
+    <ClCompile Include="open_cl.cpp" />
     <ClCompile Include="snow_drop_visualiser.cpp" />
     <ClCompile Include="src\BaseApplication.cpp" />
     <ClCompile Include="src\Camera.cpp" />
@@ -20,10 +21,12 @@
     <ClCompile Include="src\deps\imgui_draw.cpp" />
     <ClCompile Include="src\deps\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="src\Gizmos.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\TestApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImGuizmo.hpp" />
+    <ClInclude Include="open_cl.hpp" />
     <ClInclude Include="snow_drop_visualiser.hpp" />
     <ClInclude Include="src\BaseApplication.h" />
     <ClInclude Include="src\Camera.h" />
@@ -46,13 +49,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>

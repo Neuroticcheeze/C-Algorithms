@@ -1,7 +1,7 @@
 #include "..\snow_drop_visualiser.hpp"
 #include <imgui.h>
 #include "..\ImGuizmo.hpp"
-
+#include "..\open_cl.hpp"
 
 
 int main()
@@ -16,6 +16,8 @@ int main()
 		sdvGizmos::addRotateHandle(center);
 		sdvGraphics::addSphere(center, 2, 32, 16, colour);
 	});
+
+	OpenCLWrap::initialise();
 
 	ctx->start();
 	delete ctx;

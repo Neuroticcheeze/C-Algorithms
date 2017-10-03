@@ -1,6 +1,3 @@
-﻿  Octree.cpp
-c:\users\neuro\documents\visual studio 2017\projects\algorithms\algorithms\octree.cpp(78): warning C4018: '>': signed/unsigned mismatch
-c:\users\neuro\documents\visual studio 2017\projects\algorithms\algorithms\octree.cpp(135): warning C4018: '>': signed/unsigned mismatch
-  Algorithms.vcxproj -> C:\Users\Neuro\Documents\Visual Studio 2017\Projects\Algorithms\Debug\Octree.exe
-  Algorithms.vcxproj -> C:\Users\Neuro\Documents\Visual Studio 2017\Projects\Algorithms\Debug\Octree.pdb (Partial PDB)
+﻿  Algorithms.vcxproj -> C:\Users\Neuro\Documents\GitHub\C-Algorithms\Algorithms\Debug\Octree.exe
+  Algorithms.vcxproj -> C:\Users\Neuro\Documents\GitHub\C-Algorithms\Algorithms\Debug\Octree.pdb (Partial PDB)
   0 File(s) copied

@@ -1,0 +1,12 @@
+#define KERNEL void kernel
+
+#define lidX get_local_id(0)
+#define lidY get_local_id(1)
+#define lidZ get_local_id(2)
+
+#define gidX get_global_id(0)
+#define gidY get_global_id(1)
+#define gidZ get_global_id(2)
+
+#define deref(A)(*A)
+#define cast_deref(TYPE, A) ((TYPE)*A)

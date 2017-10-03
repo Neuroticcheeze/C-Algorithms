@@ -112,7 +112,11 @@ namespace sdvGizmos
 	SDV_API void addTransformHandle(pfloat4x4 p_mat);
 }
 
-namespace sdvGui
+//namespace sdvGui
+//{
+//}
+
+namespace sdvCompute
 {
 }
 

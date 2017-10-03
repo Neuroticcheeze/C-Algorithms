@@ -1,4 +1,0 @@
-kernel void set(global uchar *a)
-{
-	*a = 4;
-}
